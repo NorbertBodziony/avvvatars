@@ -1,45 +1,50 @@
-import * as React from 'react';
-import { ComponentType } from 'react'
-import { styled } from 'goober'
+import { Component, JSX } from 'solid-js'
 import * as shapes from './shapes'
 import { ShapeProps } from './shapes'
 
 export type ShapeNames = keyof typeof shapes
+
 interface ShapeList {
-	[key: string]: ComponentType<ShapeProps>
+  [key: string]: Component<ShapeProps>
 }
 
 export interface Props {
   name: ShapeNames
   size?: number
   color: string
+  children?: JSX.Element
 }
 
-export const ShapeWrapper = styled('span')<Props>`
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
+const ShapeWrapper: Component<Props> = (props) => {
+  const style = {
+    display: 'inline-flex',
+    'align-items': 'center',
+    'vertical-align': 'middle',
+    color: `#${props.color || 'currentColor'}`,
+  } as const
 
-  color: #${p => p.color || 'currentColor'};
-`
+  return (
+    <span style={style} role='img'>
+      {props.children}
+    </span>
+  )
+}
 
 export const shapeList = Object.keys(shapes)
 
-export default function Shape(props: Props){
+const Shape: Component<Props> = (props) => {
   const { name, size = 24 } = props
-
   const Tag = (shapes as ShapeList)[name]
 
-  if(!Tag) {
-    // shape doen't exists
+  if (!Tag) {
     return null
   }
 
   return (
-    <ShapeWrapper {...props} role="img">
-      <Tag
-        width={size}
-      />
+    <ShapeWrapper {...props}>
+      <Tag width={size * 0.6} />
     </ShapeWrapper>
   )
 }
+
+export default Shape

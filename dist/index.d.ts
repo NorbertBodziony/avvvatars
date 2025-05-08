@@ -1,5 +1,6 @@
-/// <reference types="react" />
-declare type Style = 'character' | 'shape';
+import { Component } from 'solid-js';
+
+type Style = 'character' | 'shape';
 interface Params {
     displayValue?: string;
     value: string;
@@ -11,5 +12,6 @@ interface Params {
     borderColor?: string;
     radius?: number;
 }
-export default function Avvvatars(params: Params): JSX.Element;
-export {};
+declare const Avvvatars: Component<Params>;
+
+export { Avvvatars as default };

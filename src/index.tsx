@@ -1,88 +1,20 @@
-import * as React from 'react';
+import { Component, JSX } from 'solid-js'
 import randiman from './lib/random'
 import { BACKGROUND_COLORS, TEXT_COLORS, SHAPE_COLORS } from './lib/colors'
 import Shape, { ShapeNames } from './shape/Shape'
-import { styled, setup } from 'goober'
-
-// initialize goober
-setup(React.createElement, undefined, undefined, (props: any) => {
-  for (let prop in props) {
-      if (prop[0] === '$') {
-          delete props[prop];
-      }
-  }
-});
 
 const DEFAULTS = {
-  style: "character",
+  style: 'character',
   size: 32,
   shadow: false,
-  
+
   border: false,
   borderSize: 2,
-  borderColor: "#fff"
+  borderColor: '#fff',
 }
-
-interface WrapperProps {
-  size: number
-  color: string
-
-  $shadow?: boolean
-
-  $border?: boolean
-  $borderSize?: number
-  $borderColor?: string
-  $radius?: number
-}
-
-const Wrapper = styled('div')<WrapperProps>`
-  width: ${p => p.size}px;
-  height: ${p => p.size}px;
-  border-radius: ${p => p.$radius || p.size}px;
-  background-color: #${p => p.color};
-
-  ${ p => p.$border &&
-  `border: ${p.$borderSize}px solid ${p.$borderColor};`
-  }
-
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-
-  &:hover {
-    z-index: 3;
-  }
-
-  ${p => p.$shadow && `
-    box-shadow: 
-      0px 3px 8px rgba(18, 18, 18, 0.04),  
-      0px 1px 1px rgba(18, 18, 18, 0.02);
-  `}
-`
-
-// implement size
-const Text = styled('p')<{ color: string, size: number }>`
-  /* Reset */
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  box-sizing: border-box;
-
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-
-  font-size: ${p => Math.round(p.size / 100 * 37)}px;
-  color: #${p => p.color};
-  line-height: 0;
-  text-transform: uppercase;
-  font-weight: 500;
-`
 
 type Style = 'character' | 'shape'
-interface Params
-{
+interface Params {
   displayValue?: string
   // this should be unique to user, it can be email, user id, or full name
   value: string
@@ -97,53 +29,97 @@ interface Params
   radius?: number
 }
 
-export default function Avvvatars(params: Params)
-{
-  const { 
+const Wrapper: Component<{
+  size: number
+  color: string
+  shadow?: boolean
+  border?: boolean
+  borderSize?: number
+  borderColor?: string
+  radius?: number
+  children: JSX.Element
+}> = (props) => {
+  const style = {
+    width: `${props.size}px`,
+    height: `${props.size}px`,
+    'border-radius': `${props.radius || props.size}px`,
+    'background-color': `#${props.color}`,
+    border: props.border ? `${props.borderSize}px solid ${props.borderColor}` : 'none',
+    'box-sizing': 'border-box',
+    display: 'flex',
+    'justify-content': 'center',
+    'align-items': 'center',
+    'user-select': 'none',
+    'box-shadow': props.shadow
+      ? '0px 3px 8px rgba(18, 18, 18, 0.04), 0px 1px 1px rgba(18, 18, 18, 0.02)'
+      : 'none',
+  } as const
+
+  return <div style={style}>{props.children}</div>
+}
+
+const Text: Component<{
+  color: string
+  size: number
+  children: string
+}> = (props) => {
+  const style = {
+    margin: '0',
+    padding: '0',
+    'text-align': 'center',
+    'box-sizing': 'border-box',
+    'font-family': '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif',
+    'font-size': `${Math.round((props.size / 100) * 37)}px`,
+    color: `#${props.color}`,
+    'line-height': '0',
+    'text-transform': 'uppercase',
+    'font-weight': '500',
+  } as const
+
+  return <p style={style}>{props.children}</p>
+}
+
+const Avvvatars: Component<Params> = (props) => {
+  const {
     style = DEFAULTS.style,
-    displayValue, 
-    value, 
+    displayValue,
+    value,
     radius,
-    size = DEFAULTS.size, 
-    shadow = DEFAULTS.shadow, 
-    border = DEFAULTS.border, 
+    size = DEFAULTS.size,
+    shadow = DEFAULTS.shadow,
+    border = DEFAULTS.border,
     borderSize = DEFAULTS.borderSize,
-    borderColor = DEFAULTS.borderColor
-  } = params
+    borderColor = DEFAULTS.borderColor,
+  } = props
 
   // get first two letters
-  const name = String(displayValue || value).substring(0, 2);
+  const name = String(displayValue || value).substring(0, 2)
 
   // generate unique random for given value
   // there is 20 colors in array so generate between 0 and 19
-  const key = randiman({ value, min: 0, max: 19 });
+  const key = randiman({ value, min: 0, max: 19 })
   // there is 60 shapes so generate between 1 and 60
   const shapeKey = randiman({ value, min: 1, max: 60 })
 
   return (
-    <Wrapper 
-      size={size} 
-      color={BACKGROUND_COLORS[key]} 
-      $shadow={shadow} 
-      $border={border} 
-      $borderSize={borderSize}
-      $borderColor={borderColor}
-      $radius={radius}
+    <Wrapper
+      size={size}
+      color={BACKGROUND_COLORS[key]}
+      shadow={shadow}
+      border={border}
+      borderSize={borderSize}
+      borderColor={borderColor}
+      radius={radius}
     >
-      {style === 'character' ?
-        <Text 
-          color={TEXT_COLORS[key]}
-          size={size}
-        >
+      {style === 'character' ? (
+        <Text color={TEXT_COLORS[key]} size={size}>
           {name}
         </Text>
-        :
-        <Shape 
-          name={`Shape${shapeKey}` as ShapeNames}
-          color={SHAPE_COLORS[key]}
-          size={Math.round((size) / 100 * 50)}
-        />
-      }
+      ) : (
+        <Shape name={`Shape${shapeKey}` as ShapeNames} color={SHAPE_COLORS[key]} size={size} />
+      )}
     </Wrapper>
   )
 }
+
+export default Avvvatars

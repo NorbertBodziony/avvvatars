@@ -1,32 +1,31 @@
 {
-  "name": "avvvatars-react",
-  "version": "0.4.2",
-  "description": "generates unique placeholder avatars with either characters or shapes for your react project",
+  "name": "@nightlyapp/avvvatars-solid",
+  "version": "0.5.0",
+  "description": "generates unique placeholder avatars with either characters or shapes for your solidjs project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/avvvatars-react.esm.js",
+  "module": "dist/avvvatars-solid.esm.js",
   "scripts": {
-    "build": "tsdx build"
+    "build": "tsup"
   },
   "author": "Nusu Alabuga",
   "license": "MIT",
   "keywords": [
     "placeholder avatars",
     "avatars",
-    "react",
+    "solidjs",
     "random avatar"
   ],
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "typescript": "^3.7.4",
-    "tsdx": "^0.14.1"
+    "tsup": "^8.4.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.4.19",
+    "vite-plugin-solid": "^2.11.6"
   },
   "peerDependencies": {
-    "react": ">= 16",
-    "react-dom": ">= 16"
+    "solid-js": "^1.9.6"
   },
   "dependencies": {
-    "goober": "^2.1.8"
+    "@solidjs/meta": "^0.29.4"
   }
 }
