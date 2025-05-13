@@ -1,5 +1,6 @@
 import { Component, createSignal } from 'solid-js'
-import Avvvatars from './index'
+// import Avvvatars from './index'
+import Avvvatars from '../dist/index'
 
 const generateRandomEmail = () => {
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789'

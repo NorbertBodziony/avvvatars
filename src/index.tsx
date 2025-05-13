@@ -121,5 +121,4 @@ const Avvvatars: Component<Params> = (props) => {
     </Wrapper>
   )
 }
-
 export default Avvvatars
