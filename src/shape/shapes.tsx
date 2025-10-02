@@ -33,7 +33,7 @@ export const Shape3: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4196'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -58,7 +58,7 @@ export const Shape5: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4202'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -74,7 +74,7 @@ export const Shape6: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4205'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -174,7 +174,7 @@ export const Shape15: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4226'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -306,7 +306,7 @@ export const Shape27: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4264'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -344,7 +344,7 @@ export const Shape30: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4288'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -384,7 +384,7 @@ export const Shape33: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4302'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -402,7 +402,7 @@ export const Shape34: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4313'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -429,7 +429,7 @@ export const Shape36: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4318'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -483,7 +483,7 @@ export const Shape41: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4344'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -499,7 +499,7 @@ export const Shape42: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4346'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -515,7 +515,7 @@ export const Shape43: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4349'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -549,7 +549,7 @@ export const Shape46: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4355'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -565,7 +565,7 @@ export const Shape47: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4358'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -617,7 +617,7 @@ export const Shape52: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4369'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -633,7 +633,7 @@ export const Shape53: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4372'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -651,7 +651,7 @@ export const Shape54: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4378'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -680,7 +680,7 @@ export const Shape56: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4383'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -698,7 +698,7 @@ export const Shape57: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4386'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -727,7 +727,7 @@ export const Shape59: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4392'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>
@@ -745,7 +745,7 @@ export const Shape60: Component<ShapeProps> = (props) => (
     </g>
     <defs>
       <clipPath id='clip0_1_4395'>
-        <rect width={props.width} height={props.width} fill='white' />
+        <rect width='32' height='32' fill='white' />
       </clipPath>
     </defs>
   </svg>

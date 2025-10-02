@@ -39,10 +39,9 @@ const Shape: Component<Props> = (props) => {
   if (!Tag) {
     return null
   }
-
   return (
     <ShapeWrapper {...props}>
-      <Tag width={size * 0.6} />
+      <Tag width={size * 0.65} />
     </ShapeWrapper>
   )
 }

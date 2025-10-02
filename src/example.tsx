@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js'
-// import Avvvatars from './index'
-import Avvvatars from '../dist/index'
+import Avvvatars from './index'
+// import Avvvatars from '../dist/index'
 
 const generateRandomEmail = () => {
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
@@ -72,9 +72,9 @@ const Example: Component = () => {
 
       <h2>Shape Style Examples</h2>
       <div style={{ display: 'flex', gap: '10px', 'align-items': 'center' }}>
-        <Avvvatars value={values().shape1} style='shape' size={100} />
-        <Avvvatars value={values().shape2} style='shape' size={100} />
-        <Avvvatars value={values().shape3} style='shape' size={100} />
+        <Avvvatars value={values().shape1} style='shape' size={24} radius={10} />
+        <Avvvatars value={values().shape2} style='shape' size={24} radius={20000} />
+        <Avvvatars value={values().shape3} style='shape' size={24} radius={30} />
       </div>
 
       <h2>With Border Examples</h2>
